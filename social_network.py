@@ -44,7 +44,7 @@ for x in coms.itertuples():
 
 
 ##
-exp_graph(G, fi='output')
-write_d3('output')
+exp_graph(G, fi='G1101_2016')
+write_d3('G1101_2016')
 
 ##
