@@ -31,6 +31,9 @@ def write_d3(fi, **kwargs):
     path = kwargs.get('path', '')
     jsonfi = fi + '.json'
     htmlfi = join(path, fi + '.html')
+    if kwargs.get('push'):
+        jsonfi = "https://weichengliou.github.io/green_team/{}/{}".format(
+            path, jsonfi)
 
     render_html(htmlfi, FileName=jsonfi, **kwargs)
     return htmlfi

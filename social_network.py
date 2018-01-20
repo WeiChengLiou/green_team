@@ -3,7 +3,6 @@ from vis.output import exp_graph, write_d3
 import pandas as pd
 import json
 import networkx as nx
-import numpy as np
 
 fi = 'G1101_2016_list.json'
 ret = json.loads(open(fi).read())
@@ -17,14 +16,14 @@ coms = pd.concat([
          'source': 'com',
          'taxcode_source': 'taxcode',
      })
-    ),
+     ),
     (df[['target', 'taxcode_target']]
      .drop_duplicates()
      .rename(columns={
          'target': 'com',
          'taxcode_target': 'taxcode',
      })
-    ),
+     ),
 ])
 coms = coms.drop_duplicates()
 
@@ -44,7 +43,8 @@ for x in coms.itertuples():
 
 
 ##
-exp_graph(G, fi='G1101_2016')
-write_d3('G1101_2016')
+push = False  # True if want to push to gh-pages
+exp_graph(G, path='docs', fi='G1101_2016')
+write_d3('G1101_2016', path='docs', push=True)
 
 ##
