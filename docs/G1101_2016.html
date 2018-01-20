@@ -171,7 +171,7 @@ function linkArc(d) {
         d.target.y;
 };
 
-var data = d3.json("output.json", function(error, graph){
+var data = d3.json("https://weichengliou.github.io/green_team/docs/G1101_2016.json", function(error, graph){
     draw(graph, validate());
 });
 
